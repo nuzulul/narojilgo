@@ -27,7 +27,7 @@ http.createServer(function (req, res) {
         res.end();
     
     }
-  else if (req.url == '/')
+  else
     {
           const headers = {
             'Access-Control-Allow-Origin': '*', /* @dev First, read about security */
@@ -42,15 +42,6 @@ http.createServer(function (req, res) {
         var remoteUrl = remote + req.url;
         request(remoteUrl).pipe(res);
       
-    }
-    else
-    {
-          // set response header
-          res.writeHead(200, { 'Content-Type': 'text/html' }); 
-          
-          // set response content    
-          res.write('narojilgo');
-          res.end();    
     }
   
 
